@@ -11,48 +11,48 @@ PythonJourney is a repository that showcases the learning path in Python, combin
 
 This repository is intended to:
 
-Provide a structured path from Python basics to advanced concepts.
+- Provide a structured path from Python basics to advanced concepts.
 
-Demonstrate how theory is applied in practice.
+- Demonstrate how theory is applied in practice.
 
-Inspire others who want to start learning Python.
+- Inspire others who want to start learning Python.
 
 📚 Contents
 Courses & Notes
 
-Python Basics: syntax, variables, data types, operators
+- Python Basics: syntax, variables, data types, operators
 
-Control Flow: loops, if/else statements, logical operators
+- Control Flow: loops, if/else statements, logical operators
 
-Data Structures: lists, tuples, sets, dictionaries
+- Data Structures: lists, tuples, sets, dictionaries
 
-Functions & Modules: defining functions, importing modules, parameters
+- Functions & Modules: defining functions, importing modules, parameters
 
-Object-Oriented Programming (OOP): classes, objects, inheritance
+- Object-Oriented Programming (OOP): classes, objects, inheritance
 
-File Handling: reading, writing, and managing files
+- File Handling: reading, writing, and managing files
 
-Advanced Concepts: exceptions, decorators, generators
+- Advanced Concepts: exceptions, decorators, generators
 
-Python Standard Library: random, datetime, math, enum
+- Python Standard Library: random, datetime, math, enum
 
 Exercises
 
-Basic exercises: User info dictionary, Even/Odd numbers, Tuple swaps, Password validator
+- Basic exercises: User info dictionary, Even/Odd numbers, Tuple swaps, Password validator
 
-Real-life inspired exercises: Contact book, Grocery cart, Bus ticket price calculator, Café order system
+- Real-life inspired exercises: Contact book, Grocery cart, Bus ticket price calculator, Café order system
 
-Longer projects: Movie ticket booking, Hotel reservation system, School management system, Mini e-commerce system
+- Longer projects: Movie ticket booking, Hotel reservation system, School management system, Mini e-commerce system
 
 💡 Key Features
 
-Structured learning path from fundamentals to projects
+- Structured learning path from fundamentals to projects
 
-Combines theory and practical exercises
+- Combines theory and practical exercises
 
-Real-life inspired challenges to apply Python skills
+- Real-life inspired challenges to apply Python skills
 
-Covers beginner, intermediate, and advanced topics
+- Covers beginner, intermediate, and advanced topics
 
 🛠 Technologies & Concepts Learned
 
@@ -72,19 +72,19 @@ Covers beginner, intermediate, and advanced topics
 
 By exploring this repository, learners can:
 
-Strengthen their Python fundamentals
+- Strengthen their Python fundamentals
 
-Apply concepts through practical exercises and projects
+- Apply concepts through practical exercises and projects
 
-Understand real-world applications of Python
+- Understand real-world applications of Python
 
-Be inspired to start their own Python journey
+- Be inspired to start their own Python journey
 
 📬 Contact
 
-GitHub: @Perryx7
+- GitHub: @Perryx7
 
-Email: perryx7@example.com
+Email: jacquesperry30@gmail.com
 
 ✨ Motivation
 
