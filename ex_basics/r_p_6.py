@@ -8,6 +8,7 @@
 orders = [
     {
         "customer" : "customer 1",
+        #product and quantity
         "items" : {
             "product1" : 12,
             "product2" : 14,
