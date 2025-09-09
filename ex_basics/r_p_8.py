@@ -15,20 +15,14 @@ def deposit(balance , amount) :
 
 
 def withdraw(balance , amount) :
- #initialise the balance with the cureent balance + the current amount you want to make a withdraw
+ #initialise the balance with the current balance + the  amount you want to make a withdraw
  balance -= amount 
- 
  print ("you make a withdraw off " + str(amount) + " " + "\n you new balance is " + str(balance))
 
 #return the new balance
  return balance
 
-
-
-
-
-
-
+#Actions
 balance = int(input ("enter your initial balance "))
 
 while True:
@@ -54,7 +48,7 @@ while True:
     elif action == "3" :
       print("your balance is " + str(balance))
       #exit action
-    elif action == "exit":
+    elif action == "4":
      break
 
 
