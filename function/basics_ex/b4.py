@@ -5,3 +5,12 @@
 # Add a new movie
 # Remove a movie
 # Show all movies in the collection
+
+
+
+def main():
+    pass  # TODO: implement main logic
+
+
+if __name__ == "__main__":
+    main()

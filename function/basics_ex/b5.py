@@ -5,3 +5,14 @@
 # Search for a contact by name
 # Delete a contact
 # Show all contacts
+
+
+
+
+
+def main():
+    pass  # TODO: implement main logic
+
+
+if __name__ == "__main__":
+    main()
