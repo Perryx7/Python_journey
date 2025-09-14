@@ -24,15 +24,46 @@ def get_menu_choice():
 
 
 
-def add_student (students, student_name, grade_student):
-     students[student_name] = grade_student
+def add_students(students):
+    """Add multiple students until user types 'stop'."""
+    while True:
+        student_name = input("Enter a name (or type 'stop' to finish): ").strip()
+        if student_name.lower() == "stop":
+            break
 
-     return students
+        if not student_name:
+            print("❌ The name can't be empty")
+            continue
 
-def upgrade_grade():
-      pass  # TODO: implement upgrade  logic
-def display_student():
-       pass  # TODO: implement display  logic
+        grade_input = input("Enter the grade (0-20): ")
+
+        if grade_input.isdigit():   # ✅ check if is a valid number
+            student_grade = int(grade_input)
+            if 0 <= student_grade <= 20:
+                students[student_name] = student_grade
+                print(f"✅ {student_name} added with grade {student_grade}")
+            else:
+                print("❌ Enter a valid grade between 0 and 20")
+        else:
+            print("❌ Please enter numbers only for the grade")
+
+def upgrade_grade(students):
+    
+    name_student = input("Enter the name of the student  you want to update:  ")
+
+    if name_student not in students : 
+         print("student not found")
+    else:
+         updated_grade = int(input("enter the new grade: "))
+         students[name_student] =updated_grade
+            
+def display_student(students):
+    if not students:   # if the dictionnary is empty
+        print("⚠️ No students")
+    else:
+        for student, grade in students.items():
+            print(f"Student: {student}, Grade: {grade}")
+
 def main():
     students = {}
     print("Welcome to the Student Grade Tracker!")
@@ -40,31 +71,22 @@ def main():
     while True : 
          choice = get_menu_choice()
 
-         if choice == "1" : 
+         if choice == "1" :            
+             add_students(students)
+            
+                  
+         elif choice == "2" : 
+              upgrade_grade(students)
+          
+         elif choice == "3" : 
+              display_student(students)
+         elif choice == "4" :
+              break
               
-              student_name = input("Enter a name ")
-              student_grade = int(input("Enter the grade: "))
-              
-              if not student_name : 
-                   print("The name can't be empty")
-              elif student_grade < 0 or student_grade > 20 :
-                   print("Enter a valid grade ")
-              else:
-                   add_student(students, student_name, student_grade)
-                   print(students)
 
-        #  elif choice == "2" :
 
-        #       name_update = input("Enter the name of the students you want to update the grade") 
 
-        #       if name_update not in students : 
-        #            print("the student don't exit ")
-        #       else:
-        #            new_note = int(Enter a new note)
 
-         
-         
-              #add_student(students, student_name, grade_student)
 
  
 
