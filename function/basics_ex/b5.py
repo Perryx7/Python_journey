@@ -9,11 +9,12 @@
 def get_menu_choice():
     """Display menu and get user choice."""
     print("\n" + "-"*25)
-    print("STUDENT GRADE TRACKER")
+    print("CONTACT COLLECTION")
     print("-"*25)
-    print("1. Add a new student")
-    print("2. Update a student's grade")
-    print("3. Display all students")
+    print("1. Add a new contact")
+    print("2. search for a contact")
+    print("3. Display all contacts")
+    print("3. delete a contact")
     print("4. Exit")
     print("-"*25)
 
@@ -22,7 +23,15 @@ def get_menu_choice():
     return choice
 
 def add_con(contacts): 
-    pass #main logic
+    
+    contact_name = input("Enter a contact name :  ")
+    if contact_name in contacts:
+        print(contact_name + " " +  "already exist")
+    else:
+        contact_num  = int(input("Enter a phone number"))
+        contacts[contact_name] = contact_num
+        print(contact_name + " " + " succesfuly added ")
+
 
 def del_con(contacts) :
     pass #main logic
@@ -41,7 +50,7 @@ def main():
 
    while True : 
        
-       choice = get_menu_choice
+       choice = get_menu_choice()
 
        if choice == "1" : 
            add_con(contacts)
