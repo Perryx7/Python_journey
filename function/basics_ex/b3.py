@@ -47,6 +47,7 @@ def add_students(students):
         else:
             print("❌ Please enter numbers only for the grade")
 
+
 def upgrade_grade(students):
     
     name_student = input("Enter the name of the student  you want to update:  ")
@@ -58,6 +59,7 @@ def upgrade_grade(students):
          students[name_student] =updated_grade
             
 def display_student(students):
+    """Display all the students."""
     if not students:   # if the dictionnary is empty
         print("⚠️ No students")
     else:
