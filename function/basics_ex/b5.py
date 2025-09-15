@@ -14,8 +14,8 @@ def get_menu_choice():
     print("1. Add a new contact")
     print("2. search for a contact")
     print("3. Display all contacts")
-    print("3. delete a contact")
-    print("4. Exit")
+    print("4. delete a contact")
+    print("5. Exit")
     print("-"*25)
 
     
@@ -26,7 +26,7 @@ def add_con(contacts):
     
     contact_name = input("Enter a contact name :  ")
     if contact_name in contacts:
-        print(contact_name + " " +  "already exist")
+        print(contact_name + " "  +  "already exist")
     else:
         contact_num  = int(input("Enter a phone number"))
         contacts[contact_name] = contact_num
@@ -34,12 +34,32 @@ def add_con(contacts):
 
 
 def del_con(contacts) :
-    pass #main logic
+    del_con = input("Enter the name of the contact you want to delete: ")
+
+    if del_con not in contacts : 
+        print("this contact don't exist in the list")
+    else : 
+        contacts.pop(del_con)
+        print("contact delete succesfully")
+
+    
 
 def show_con(contacts) : 
-    pass #main logic
+    if not contacts :
+        print("There is no contact in the list")
+    else:
+        for i, contact in enumerate(contacts.items(), start=1):
+         print(f"{i}. {contact}")
+
 
 def search_con(contacts) :
+
+    consearch = input("Enter a name")
+
+    if consearch in contacts : 
+        print(consearch)
+    else : print("contact not find")
+
     pass #main logic
 
 def main():
@@ -55,11 +75,11 @@ def main():
        if choice == "1" : 
            add_con(contacts)
        elif choice == "2" :
-           del_con(contacts)
-       elif choice == "3" :
            search_con(contacts)
-       elif choice == "4" :
+       elif choice == "3" :
            show_con(contacts)
+       elif choice == "4" :
+           del_con(contacts)
        elif choice == "5" :
            break
 
