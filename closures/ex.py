@@ -32,10 +32,20 @@ test()
 test()
 
 # Exercise 1.3: Modify a global list
-# pythonitems = []
+pythonitems = []
 
 # # Write a function add_item(item) that adds to this global list
+def add_items(item) :
+    global pythonitems
+    pythonitems.append(item)
+    
+
+
 # # Write a function show_items() that displays all items
+
+def show_items() :
+        print (pythonitems)
+
 
 # 🎯 LEVEL 2 EXERCISES - Nonlocal
 # Exercise 2.1: Counter with nonlocal
