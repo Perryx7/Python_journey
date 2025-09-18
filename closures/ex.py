@@ -120,16 +120,52 @@ calc("multiply" , 5)
     
 #     return connect, disconnect, status
 
+def make_connection_manager():
+    state_connection = False
+
+    def connect():
+        nonlocal state_connection
+        if not state_connection:  # If disconnected
+            state_connection = True
+            print("Connected!")
+        else:
+            print("Already connected!")
+
+    def disconnect():
+        nonlocal state_connection
+        if state_connection:  # If connected
+            state_connection = False
+            print("Disconnected!")
+        else:
+            print("Already disconnected!")
+
+    def status():
+        return state_connection
+
+    return connect, disconnect, status
+
+    
+
+
+
 # 🚀 LEVEL 3 EXERCISES - Advanced Closures
+
 # Exercise 3.1: Validator factory
 # pythondef make_validator(min_length, max_length):
 #     # Create a function that validates if a string 
 #     # is between min_length and max_length
 #     pass
-
 # # Usage:
 # # email_validator = make_validator(5, 50)
 # # password_validator = make_validator(8, 20)
+
+def make_validator(min_length, max_length):
+     
+     def validator(text):
+          return min_length <= len(text) <= max_length
+     return validator
+
+
 # Exercise 3.2: Call history tracker
 # pythondef track_calls(func):
 #     # Create a wrapper function that:
@@ -137,6 +173,20 @@ calc("multiply" , 5)
 #     # - Stores arguments from each call
 #     # - Can display the history
 #     pass
+
+def track_calls(func):
+    count = 0
+    history = []
+
+    def wrapper(*args, **kwargs):
+        nonlocal count
+        count += 1
+        history.append((args, kwargs))
+        result = func(*args, **kwargs)
+        return result
+
+    wrapper.history = history  #e
+    return wrapper
 
 # # Usage:
 # # tracked_func = track_calls(my_function)
