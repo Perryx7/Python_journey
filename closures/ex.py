@@ -9,12 +9,27 @@
 # test()
 # print(f"Global: {x}")
 # Question: What will this code output and why?
+
 # Exercise 1.2: Global counter
 # Create a function increment_counter() that:
 
 # Uses a global variable counter = 0
 # Increments it by 1 on each call
 # Prints the new value
+
+count = 0
+
+def incremnt_counter () :
+    global count
+    count += 1
+    print (count)
+
+
+test = incremnt_counter
+test()
+test()
+test()
+test()
 
 # Exercise 1.3: Modify a global list
 # pythonitems = []
@@ -160,3 +175,6 @@
 # global = variable defined outside all functions
 # nonlocal = variable in parent function
 # closure = function that "captures" variables from its environment
+
+
+
