@@ -32,17 +32,13 @@ test()
 test()
 
 # Exercise 1.3: Modify a global list
+# # Write a function add_item(item) that adds to this global list
+# # Write a function show_items() that displays all items
 pythonitems = []
 
-# # Write a function add_item(item) that adds to this global list
 def add_items(item) :
     global pythonitems
     pythonitems.append(item)
-    
-
-
-# # Write a function show_items() that displays all items
-
 def show_items() :
         print (pythonitems)
 
@@ -52,17 +48,24 @@ def show_items() :
 # Create a function that returns another function:
 # pythondef make_counter():
 #     # Local variable here
-    
 #     def increment():
 #         # Use nonlocal to modify parent's variable
 #         pass
     
 #     return increment
+def make_counter() :
+     counter = 0
 
-# # Expected usage:
-# # counter1 = make_counter()
-# # counter1()  # 1
-# # counter1()  # 2
+     def increment ():
+          nonlocal counter 
+          counter +=1
+
+     return increment
+
+test = make_counter()
+test()
+
+
 # Exercise 2.2: Calculator with memory
 # pythondef make_calculator():
 #     # Variable to store previous result
@@ -74,11 +77,31 @@ def show_items() :
     
 #     return calculate
 
-# # Usage:
-# # calc = make_calculator()
-# # calc('add', 5)      # 5
-# # calc('add', 3)      # 8
-# # calc('multiply', 2) # 16
+
+def make_calculator ():
+     result = 0
+
+     def calculate(operation, number) :
+          nonlocal result 
+          if operation == "add" : 
+               result += number 
+          elif operation == "multiply" :
+               result *= number
+          elif operation == "reset" :
+               result = 0
+               return result
+
+     return calculate
+
+
+calc = make_calculator()
+calc("add" , 5)
+calc("add" , 5)
+calc("multiply" , 5)
+
+
+
+
 # Exercise 2.3: Connection state
 # pythondef make_connection_manager():
 #     # Variable for state (True/False)
