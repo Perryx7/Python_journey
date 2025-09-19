@@ -185,11 +185,12 @@ def track_calls(func):
         result = func(*args, **kwargs)
         return result
 
-    wrapper.history = history  #e
+    wrapper.history = history  #attach the history to te wrapper function so we can store it on the vraiable
     return wrapper
 
-# # Usage:
-# # tracked_func = track_calls(my_function)
+
+
+
 # Exercise 3.3: Rate limiter
 # pythondef make_rate_limiter(max_calls, time_window):
 #     # Limit number of calls within a time window
@@ -197,12 +198,34 @@ def track_calls(func):
 #     # time_window: window in seconds
 #     pass
 
-# # Usage:
-# # limiter = make_rate_limiter(3, 60)  # 3 calls per minute
-# # limiter()  # OK
-# # limiter()  # OK  
-# # limiter()  # OK
-# # limiter()  # "Rate limit exceeded"
+
+import time
+
+def make_rate_limiter(max_calls, time_window):
+    call_times = []  # stores timestamps of calls
+
+    def limiter():
+        nonlocal call_times
+        now = time.time()  # current time in seconds
+
+        # Keep only timestamps within the time window#
+        #comprehension list
+
+        call_times = [t for t in call_times if now - t <= time_window]
+
+        if len(call_times) < max_calls:
+            call_times.append(now)  # register this call
+            print("✅ Call allowed")
+        else:
+            print("❌ Rate limit exceeded. Try later.")
+
+    return limiter
+     
+
+
+
+
+
 
 # 💪 LEVEL 4 EXERCISES - Challenges
 # Exercise 4.1: Cache with expiration
@@ -258,6 +281,7 @@ def track_calls(func):
 # global = variable defined outside all functions
 # nonlocal = variable in parent function
 # closure = function that "captures" variables from its environment
+#solve it firts and check for the solution, good luck
 
 
 
