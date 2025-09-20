@@ -247,11 +247,73 @@ def make_rate_limiter(max_calls, time_window):
 #     # - Functions: add_score, level_up, lose_life, reset
 #     # - Function get_state that returns all state
 #     pass
+
+def make_game_state():
+     level = 0
+     score = 0
+     lives = 5
+
+     def add_score():
+          nonlocal score
+          score += 5
+          print("your score: " + "" + str(score))
+          level_up()
+
+     def level_up():
+          nonlocal level
+          if score % 10 == 0:
+            level += 1
+            print("your level is: " + "" + str(level))
+
+     def lose_life():
+        nonlocal lives
+        lives = max(0, lives - 1)
+        if lives == 0:
+            print("game over")
+        else:
+            print(f"Lives remaining: {lives}")
+
+     def get_state():
+         return {
+             "score": score,
+             "level": level,
+             "lives": lives,
+         }
+         
+     def reset(): 
+        nonlocal level, score, lives
+        
+        reset_choice = input("do you want to reset: y for yes or n for no: ")
+        
+        if reset_choice == "y":
+            level = 0
+            score = 0  
+            lives = 5
+            print("Game has been reset.")
+        else:
+            print("Game continues.")
+    
+     return add_score, level_up, lose_life, reset, get_state  # 
+    
+
+  
+            
+         
+
+    
+              
+             
+
+               
+
 # Exercise 4.3: Builder pattern
+
 # pythondef make_user_builder():
 #     # Builder pattern to create a user
 #     # Chainable methods: name(), age(), email(), build()
 #     pass
+
+
 
 # # Usage:
 # # builder = make_user_builder()
