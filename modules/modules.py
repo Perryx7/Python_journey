@@ -1,6 +1,6 @@
 
 
-#module taht come with python
+#module that come with python
 import math
 import sys
 import random
