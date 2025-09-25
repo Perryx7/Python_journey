@@ -3,8 +3,12 @@
 #•	1. Simple Import
 #- Create a file greetings.py with a function say_hello(name).
 #- In main.py, import greetings and call the function with your name.
+
 #•	2. Aliasing
 #- Import math as m and calculate sqrt(49) and factorial(6).
+import math as m
+print(m.sqrt(49))
+print(m.factorial(6))
 #•	3. Selective Import
 # From random import only randint. Print 5 random integers between 1 and 20.
 #evel 2 – Intermediate (Own modules & packages)
