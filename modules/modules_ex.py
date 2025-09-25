@@ -11,6 +11,12 @@ print(m.sqrt(49))
 print(m.factorial(6))
 #•	3. Selective Import
 # From random import only randint. Print 5 random integers between 1 and 20.
+from random import randint
+print(randint(1, 20))
+print(randint(1, 20))
+print(randint(1, 20))
+print(randint(1, 20))
+print(randint(1, 20))
 #evel 2 – Intermediate (Own modules & packages)
 #•	4. Your Own Module
 #- Create calculator.py with functions: add, subtract, multiply, divide.
