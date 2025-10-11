@@ -11,7 +11,7 @@ def validate_age(age):
         return True
     else:
         raise ValueError("Invalid age")
-    pass
+    
 
 # Test
 try:
