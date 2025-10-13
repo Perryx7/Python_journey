@@ -35,6 +35,20 @@
 
 
 
+"""Simple implementation"""
+
+
+#user class
+class user:
+     def __init__(self , id , name, email, password,loyal_points,borrow_books,orders,bookings):
+         self.id =id
+         self.name = name
+         self.email= email
+         self.password= password
+         self.loyal_points= loyal_points
+         self.borrow_books= borrow_books
+         self.orders= orders
+         self.bookings= bookings
 
 
 
@@ -55,27 +69,14 @@
 
 
 
-# ask user a list of items
-# # items = []
-
-# # for i in range (n) : 
-# #     item = input("enter item :"  )
-# #     i+=1
-# #     items.append(item)
-
-# # print("your list of items : " , items)
 
 
-# items = []
 
-# print('enter your words an make stop if you want to stop')
 
-# while True : 
-#     item = input('enter your item' ).strip()
-#     if item.lower() == "stop" : 
-#      break
-#     items.append(item)
 
-# for show_item in items : 
-#    print(show_item)
+
+
+
+
+
     
