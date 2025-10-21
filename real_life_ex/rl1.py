@@ -6,6 +6,7 @@
 #  Each user has: name, email, password, loyalty_points.
 #  Users can log in and log out.
 #  Book Management
+
 #  Store books in a dictionary: book_title: {copies_available, price, category}.
 #  Users can borrow a book if available (reduce copies).
 #  Users can return a book (increase copies).
@@ -36,19 +37,52 @@
 
 
 """Simple implementation"""
-
+import sys
 
 #user class
-class user:
-     def __init__(self , id , name, email, password,loyal_points,borrow_books,orders,bookings):
-         self.id =id
-         self.name = name
-         self.email= email
-         self.password= password
-         self.loyal_points= loyal_points
-         self.borrow_books= borrow_books
-         self.orders= orders
-         self.bookings= bookings
+class User:
+    def __init__(self, id, name="", email="", password="", loyal_points=0, borrow_books=None, orders=None, bookings=None):
+        self.id = id
+        self.name = name
+        self.email = email
+        self.password = password
+        self.loyal_points = loyal_points
+        self.borrow_books = borrow_books if borrow_books is not None else []
+        self.orders = orders if orders is not None else []
+        self.bookings = bookings if bookings is not None else []
+
+    def register(self):
+        print("=== INSCRIPTION ===")
+        self.name = input("Enter your name: ")
+        self.email = input("Enter your email: ")
+        self.loyal_points = int(input("Enter your loyal points: "))
+        password1 = input("Enter a password: ")
+        password2 = input("Confirm your password: ")
+
+        if password1 != password2:
+            raise ValueError("❌ Passwords don't match.")
+        else:
+            self.password = password1
+            print(f"✅ Welcome {self.name}! You are now registered successfully.")
+
+    def login(self):
+        print("=== CONNEXION/LOGIN ===")
+        choice = input("would you like to login (Y/N): ")
+        if choice == "Y":
+            name = input("Enter your name: ")
+            email = input("Enter your email: ")
+            password = input("Enter your password: ")
+
+            if name != self.name or email != self.email or password != self.password:
+                raise ValueError("❌ Invalid credentials. Please try again.")
+            else:
+                print(f"✅ Welcome back, {self.name}!")
+        elif choice == "N":
+            print("exist the app , Thank you!")
+            sys.exit()
+
+
+
 
 
 
