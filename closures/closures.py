@@ -1,4 +1,4 @@
-# closure is a function having access to the scoe of its oarent function
+# closure is a function having access to the scope of its parent function
 # after the parent function has returned
 
 def parent_function(person):
