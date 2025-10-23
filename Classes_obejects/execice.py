@@ -31,7 +31,7 @@ Loop through the list and call the same method (e.g., make_sound()).
 
 Each animal should make a different sound.
 
-🔴 Advanced
+ Advanced
 
 Car Rental System
 

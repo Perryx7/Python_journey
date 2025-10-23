@@ -35,7 +35,7 @@ cars = [
     Car("Lexus", "RX", available=False)
 ]
 
-# Simulation
+# Simulation/polymorphism
 for c in cars:
     print(f"\nBefore rental: {c.brand} {c.model} | Available: {c.available}")
     c.rent()
